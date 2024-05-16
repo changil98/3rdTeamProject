@@ -5,6 +5,8 @@ using UnityEngine;
 public class Setting : MonoBehaviour
 {
     [SerializeField] private GameObject settingUI;
+    [SerializeField] private GameObject soundOn;
+    [SerializeField] private GameObject soundOff;
 
     public void ApeearSettingUI()
     {
@@ -14,5 +16,17 @@ public class Setting : MonoBehaviour
     public void Exit()
     {
         settingUI.SetActive(false);
+    }
+
+    public void SoundOn()
+    {
+        soundOff.SetActive(true);
+        soundOn.SetActive(false);
+    }
+
+    public void SoundOff()
+    {
+        soundOff.SetActive(false);
+        soundOn.SetActive(true);
     }
 }
