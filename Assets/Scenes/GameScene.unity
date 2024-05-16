@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_text: "\uD658\uACBD\uC124\uC815"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c80a77e433cd75c428bea0eec82b5cc1, type: 2}
-  m_sharedMaterial: {fileID: -1890655665869758486, guid: c80a77e433cd75c428bea0eec82b5cc1, type: 2}
+  m_sharedMaterial: {fileID: -2022520790567412700, guid: c80a77e433cd75c428bea0eec82b5cc1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_text: '00 : 00 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c80a77e433cd75c428bea0eec82b5cc1, type: 2}
-  m_sharedMaterial: {fileID: -1890655665869758486, guid: c80a77e433cd75c428bea0eec82b5cc1, type: 2}
+  m_sharedMaterial: {fileID: -2022520790567412700, guid: c80a77e433cd75c428bea0eec82b5cc1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
