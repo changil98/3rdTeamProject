@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     static int stage = 0;
 
     [SerializeField] private GameObject apple;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite normalImage;
+    [SerializeField] private Sprite speedUpImage;
+    [SerializeField] private Sprite ChurnOutImage;
+    [SerializeField] private Sprite AggreGateImage;
 
     public static int Stage
     {
@@ -37,18 +42,22 @@ public class GameManager : MonoBehaviour
             case 0:
                 InvokeRepeating("MakeVegetable", 0, 1f);
                 rb.gravityScale = 0.5f;
+                spriteRenderer.sprite = normalImage;
                 break;
             case 1:
                 InvokeRepeating("MakeVegetable", 0, 1f);
                 rb.gravityScale = 1f;
+                spriteRenderer.sprite = speedUpImage;
                 break;
             case 2:
                 InvokeRepeating("MakeVegetable", 0, 0.7f);
                 rb.gravityScale = 0.5f;
+                spriteRenderer.sprite = ChurnOutImage;
                 break;
             case 3:
                 InvokeRepeating("MakeVegetable", 0, 0.7f);
                 rb.gravityScale = 1f;
+                spriteRenderer.sprite = AggreGateImage;
                 break;
         }
     }
