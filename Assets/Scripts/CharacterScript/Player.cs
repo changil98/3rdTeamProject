@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
-
+    
     private void Update()
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
