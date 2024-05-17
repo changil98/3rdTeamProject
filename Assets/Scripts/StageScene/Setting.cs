@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Setting : MonoBehaviour
 {
     [SerializeField] private GameObject settingUI;
     [SerializeField] private GameObject soundOn;
     [SerializeField] private GameObject soundOff;
+    [SerializeField] private GameObject changeCharacter;
 
     public void ApeearSettingUI()
     {
@@ -29,4 +31,5 @@ public class Setting : MonoBehaviour
         soundOff.SetActive(false);
         soundOn.SetActive(true);
     }
+
 }
