@@ -11,6 +11,17 @@ public class Vegetable : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Chibi"))
+        {
+            Time.timeScale = 0f;
+            DataManager.instance.characterNum = 1;
+        } 
+        if (collision.gameObject.CompareTag("Gordo"))
+        {
+            Time.timeScale = 0f;
+            DataManager.instance.characterNum = 0;
+        }
     }
 
     private void Start()

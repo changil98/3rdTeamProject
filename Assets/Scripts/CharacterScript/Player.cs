@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
+        Vector3 worldPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (worldPos.x < 0.1f) worldPos.x = 0.1f;
+        if (worldPos.x > 0.9f) worldPos.x = 0.9f;
+        
+        transform.position = Camera.main.ViewportToWorldPoint(worldPos);
     }
 
     private void FixedUpdate()
@@ -30,9 +35,21 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(inputVec.x != 0)
+        if(inputVec.x != 0 && CompareTag("Chibi"))
         {
             spriter.flipX = inputVec.x > 0;
+        }
+
+        if(inputVec.x != 0 && CompareTag("Gordo"))
+        {
+            if(inputVec.x < 0)
+            {
+                transform.localScale = new Vector2(0.25f, 0.22f);
+            }
+            else if(inputVec.x > 0) 
+            {
+                transform.localScale = new Vector2(-0.25f, 0.22f);
+            }
         }
         anim.SetFloat("Speed",inputVec.magnitude);
     }
