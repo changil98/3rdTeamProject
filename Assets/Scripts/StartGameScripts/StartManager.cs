@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,18 +12,21 @@ public class StartManager : MonoBehaviour
 {
     public GameObject startUI;
     public GameObject characterSelect;
-    private void Awake()
-    {
-
-    }
     public void GameStartBtn()
     {
         startUI.SetActive(false);
         characterSelect.SetActive(true);
     }
 
-    public void Select()
+    public void GordoSelect()
     {
-        SceneManager.LoadScene(1);
+        DataManager.instance.characterNum = 0;
+        SceneManager.LoadScene(2);
+    }
+
+    public void BoySelect()
+    {
+        DataManager.instance.characterNum = 1;
+        SceneManager.LoadScene(2);
     }
 }
