@@ -21,12 +21,12 @@ public class StartManager : MonoBehaviour
     public void GordoSelect()
     {
         DataManager.instance.characterNum = 0;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void BoySelect()
     {
         DataManager.instance.characterNum = 1;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }

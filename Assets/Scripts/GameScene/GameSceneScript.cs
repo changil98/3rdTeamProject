@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSceneScript : MonoBehaviour
 {
     public GameObject gordo;
     public GameObject chibi;
     public GameObject menu;
-    public bool isOpen;
+
     public void PlayerReSelect()
     {
         gordo.SetActive(true);
@@ -32,5 +33,10 @@ public class GameSceneScript : MonoBehaviour
     public void BackBtn()
     {
         menu.SetActive(false);
+    }
+
+    public void RetryBtn()
+    {
+        SceneManager.LoadScene(2);
     }
 }
