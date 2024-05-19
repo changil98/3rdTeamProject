@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameObject endPanel;
+    //public GameObject endPanel;
     public GameObject gordo;
     public GameObject chibi;
 
+    public float timeRemaining = 1.0f;
+    private bool timerIsRunning = false;
 
     static int stage = 0;
 
@@ -21,6 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite speedUpImage;
     [SerializeField] private Sprite ChurnOutImage;
     [SerializeField] private Sprite AggreGateImage;
+    [SerializeField] private TextMeshProUGUI timeText;
+
 
     public static int Stage
     {
@@ -31,8 +38,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         GameManager.Instance = this;
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f;
     }
+   
 
     public void ResetGame()
     {
@@ -65,8 +73,11 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(apple);
     }
+
     private void Start()
     {
+        timerIsRunning = true;
+
         ResetGame();
         if (DataManager.instance.characterNum == 0)
         {
@@ -82,9 +93,24 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Time.timeScale <= 0f)
+
+        if (timerIsRunning)
         {
-            endPanel.SetActive(true);
+            if (timeRemaining > 0 )
+            {
+                timeRemaining -= Time.deltaTime;
+                timeText.text = timeRemaining.ToString("N2");
+            }
+
+            else if(timeRemaining <= 0.0f)
+            {
+                timeRemaining = 0;
+                timerIsRunning = false;
+                timeText.text = timeRemaining.ToString("N2");
+                // 일단 0초가 되면 클리어니까 보상 판넬 뜨게 
+                Reward.instance.rewardPanelActive();
+                Debug.Log("성공");
+            }
         }
     }
 }
