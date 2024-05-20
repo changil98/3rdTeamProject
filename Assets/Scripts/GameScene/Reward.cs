@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +11,6 @@ using static UnityEditor.Progress;
 public class Reward : MonoBehaviour
 {
     public static Reward instance;
-
 
     [SerializeField] private GameObject rewardPanel;
     [SerializeField] private GameObject exitBtn;
@@ -24,8 +24,9 @@ public class Reward : MonoBehaviour
 
     private void Awake()
     {
- 
+        inventory.init();
     }
+
 
     public void init()
     {
@@ -37,13 +38,25 @@ public class Reward : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // 중복 인스턴스 파괴
+            Destroy(gameObject);
             return;
         }
+
 
         InitializeItems();
     }
 
+    // 아이템 랜덤으로 띄우기 
+    public Item GetRandomItem()
+    {
+        if (items == null || items.Count == 0)
+        {
+            Debug.LogWarning("아이템 리스트가 비어있습니다.");
+            return null;
+        }
+        randomIndex = Random.Range(0, items.Count);
+        return items[randomIndex];
+    }
 
     public void ActivePanel()
     {
@@ -54,20 +67,7 @@ public class Reward : MonoBehaviour
         rewardItemDes.text = currentRewardItem.description;
 
         rewardPanel.SetActive(true);
-    }
-
-
-    // 아이템 랜덤으로 띄우기 
-    public Item GetRandomItem()
-    {
-        if (items == null || items.Count == 0)
-        {
-            Debug.LogWarning("아이템 리스트가 비어있습니다.");
-            return null;
-        }
-
-        randomIndex = Random.Range(0, items.Count);
-        return items[randomIndex];
+        Inventory._instance.AddItem(randomIndex);
     }
 
 
@@ -75,11 +75,11 @@ public class Reward : MonoBehaviour
     {
         items = new List<Item>();
         // 아이템 생성 및 리스트에 추가
-        Item item1 = new Item(Resources.Load<Sprite>("food_01"), "아이템1 설명");
-        Item item2 = new Item(Resources.Load<Sprite>("food_02"), "아이템2 설명");
-        Item item3 = new Item(Resources.Load<Sprite>("food_03"), "아이템3 설명");
-        Item item4 = new Item(Resources.Load<Sprite>("food_04"), "아이템4 설명");
-        Item item5 = new Item(Resources.Load<Sprite>("food_05"), "아이템5 설명");
+        Item item1 = new Item(Resources.Load<Sprite>("food_01"), "야채가 2초동안 없어집니다.");
+        Item item2 = new Item(Resources.Load<Sprite>("food_02"), "무적 상태가 2초동안 지속됩니다.");
+        Item item3 = new Item(Resources.Load<Sprite>("food_03"), "모든 야채가 사라집니다.");
+        Item item4 = new Item(Resources.Load<Sprite>("food_04"), "야채가 5초동안 없어집니다.");
+        Item item5 = new Item(Resources.Load<Sprite>("food_05"), "무적 상태가 5초동안 지속됩니다.");
 
         // 리스트에 아이템 추가
         items.Add(item1);
@@ -94,10 +94,12 @@ public class Reward : MonoBehaviour
     public void ApplyReward()
     {
         // 보상 아이템을 인벤토리에 추가
-        //inventory.AddItem(randomIndex);
+        //Inventory._instance.AddItem(randomIndex);
+       
         // 보상 팝업 창 비활성화
         rewardPanel.SetActive(false);
 
         SceneManager.LoadScene("StageScene");
     }
+
 }

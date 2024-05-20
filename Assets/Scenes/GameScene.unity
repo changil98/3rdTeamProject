@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b0199648054f24bb3357b9f506932b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingPanel: {fileID: 0}
   endPanel: {fileID: 1861495875}
   gordo: {fileID: 343122422}
   chibi: {fileID: 378583374}
@@ -1227,7 +1228,7 @@ Transform:
   m_GameObject: {fileID: 471127989}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.26, y: -4.65, z: 0}
+  m_LocalPosition: {x: -2.26, y: -4.733, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2569,8 +2570,8 @@ MonoBehaviour:
   rewardPanel: {fileID: 1618051638}
   exitBtn: {fileID: 758892563}
   rewardItemDes: {fileID: 612366077}
-  rewardImage: {fileID: 21300000, guid: 501b4a1836d595640829617c9428cd69, type: 3}
-  inventory: {fileID: 0}
+  rewardImage: {fileID: 1938437143}
+  inventory: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
 --- !u!1 &770348939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,7 +4354,7 @@ MonoBehaviour:
   exitBtn: {fileID: 758892563}
   rewardItemDes: {fileID: 612366077}
   rewardImage: {fileID: 1938437143}
-  inventory: {fileID: 0}
+  inventory: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
 --- !u!1 &1670956679
 GameObject:
   m_ObjectHideFlags: 0
