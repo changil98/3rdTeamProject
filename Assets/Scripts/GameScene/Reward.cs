@@ -24,7 +24,8 @@ public class Reward : MonoBehaviour
 
     private void Awake()
     {
- 
+        inventory.inventoryPanel = GameObject.Find("InvenPanel");
+        inventory.init();
     }
 
     public void init()
@@ -95,6 +96,7 @@ public class Reward : MonoBehaviour
     {
         // 보상 아이템을 인벤토리에 추가
         inventory.AddItem(randomIndex);
+    
         // 보상 팝업 창 비활성화
         rewardPanel.SetActive(false);
 
