@@ -11,7 +11,6 @@ public class Reward : MonoBehaviour
 {
     public static Reward instance;
 
-
     [SerializeField] private GameObject rewardPanel;
     [SerializeField] private GameObject exitBtn;
     [SerializeField] private TextMeshProUGUI rewardItemDes;
@@ -24,7 +23,6 @@ public class Reward : MonoBehaviour
 
     private void Awake()
     {
-        inventory.inventoryPanel = GameObject.Find("InvenPanel");
         inventory.init();
     }
 
@@ -95,7 +93,7 @@ public class Reward : MonoBehaviour
     public void ApplyReward()
     {
         // 보상 아이템을 인벤토리에 추가
-        //inventory.AddItem(randomIndex);
+        Inventory._instance.AddItem(randomIndex);
         // 보상 팝업 창 비활성화
         rewardPanel.SetActive(false);
 

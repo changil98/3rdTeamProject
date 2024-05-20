@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory instance;
+    public static Inventory _instance;
     public List<Sprite> itemSprites; // 아이템 이미지 리스트
     public GameObject inventoryPanel; // 인벤토리 패널
     public GameObject slotPrefab; // 슬롯 프리팹
@@ -20,9 +20,9 @@ public class Inventory : MonoBehaviour
 
     public void init()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
         }
         else
