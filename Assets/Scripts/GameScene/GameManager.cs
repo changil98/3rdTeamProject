@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
 {
     //public static GameManager Instance;
 
-    //public GameObject endPanel;
+    public GameObject settingPanel;
+    public GameObject endPanel;
     public GameObject gordo;
     public GameObject chibi;
 
@@ -84,13 +85,11 @@ public class GameManager : MonoBehaviour
         ResetGame();
         if (DataManager.instance.characterNum == 0)
         {
-            Debug.Log("확인1");
             gordo.SetActive(true);
             chibi.SetActive(false);
         }
         else if (DataManager.instance.characterNum == 1)
         {
-            Debug.Log("확인2");
             gordo.SetActive(false);
             chibi.SetActive(true);
         }
@@ -126,6 +125,7 @@ public class GameManager : MonoBehaviour
 
             else if(timeRemaining <= 0.0f)
             {
+                Time.timeScale = 0f;
                 timeRemaining = 0;
                 timerIsRunning = false;
                 timeText.text = timeRemaining.ToString("N2");
@@ -139,6 +139,12 @@ public class GameManager : MonoBehaviour
                     Debug.LogError("와이러노");
                 }
             }
+        }
+
+        if (Time.timeScale == 0 && DataManager.instance.panel == 1)
+        {
+            endPanel.SetActive(true);
+            DataManager.instance.panel = 0;
         }
     }
 }

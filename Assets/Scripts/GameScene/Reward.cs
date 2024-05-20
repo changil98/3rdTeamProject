@@ -94,7 +94,7 @@ public class Reward : MonoBehaviour
     public void ApplyReward()
     {
         // 보상 아이템을 인벤토리에 추가
-        inventory.AddItem(randomIndex);
+        //inventory.AddItem(randomIndex);
         // 보상 팝업 창 비활성화
         rewardPanel.SetActive(false);
 
