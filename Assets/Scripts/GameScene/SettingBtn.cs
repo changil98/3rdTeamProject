@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingBtn : MonoBehaviour
 {
@@ -9,12 +10,23 @@ public class SettingBtn : MonoBehaviour
 
     public void SetActivePanel()
     {
+        Time.timeScale = 0f;
         settingPanel.SetActive(true);
     }
 
     public void ExitPanel()
     {
+        Time.timeScale = 1f;
         settingPanel.SetActive(false);
     }
 
+    public void ReGame()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("StageScene");
+    }
 }

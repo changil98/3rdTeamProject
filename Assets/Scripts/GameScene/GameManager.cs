@@ -94,6 +94,22 @@ public class GameManager : MonoBehaviour
             gordo.SetActive(false);
             chibi.SetActive(true);
         }
+
+        switch (stage)
+        {
+            case 0:
+                timeRemaining = 3;
+                break;
+            case 1:
+                timeRemaining = 3;
+                break;
+            case 2:
+                timeRemaining = 3;
+                break;
+            case 3:
+                timeRemaining = 3;
+                break;
+        }
     }
 
 
