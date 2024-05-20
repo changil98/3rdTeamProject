@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     static int stage = 0;
 
+    static int level = 5;
+
     [SerializeField] private GameObject apple;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite normalImage;
@@ -36,6 +38,12 @@ public class GameManager : MonoBehaviour
     {
         get { return stage; }
         set { stage = value; }
+    }
+
+    public static int Level
+    {
+        get { return level; }
+        set { level = value; }
     }
 
     private void Awake()
@@ -125,6 +133,25 @@ public class GameManager : MonoBehaviour
 
             else if(timeRemaining <= 0.0f)
             {
+                switch (stage) // 스테이지 해금
+                {
+                    case 0:
+                        if (level < 6)
+                        {
+                            level = 6;
+                        }
+                        break;
+                    case 1:
+                        if (level < 7)
+                        {
+                            level = 7;
+                        }
+                        break;
+                    case 2:
+                        level = 8;
+                        break;
+                }
+
                 Time.timeScale = 0f;
                 timeRemaining = 0;
                 timerIsRunning = false;
