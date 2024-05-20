@@ -18,6 +18,20 @@ public class Inventory : MonoBehaviour
         InitializeInventory(20); // 20칸짜리 인벤토리 초기화
     }
 
+    public void init()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
+        }
+        else
+        {
+            Destroy(gameObject); // 중복 인스턴스 파괴
+            return;
+        }
+    }
+
     void InitializeInventory(int slotCount)
     {
         for (int i = 0; i < slotCount; i++)
