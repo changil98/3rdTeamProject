@@ -15,16 +15,16 @@ public class Reward : MonoBehaviour
     [SerializeField] private GameObject rewardPanel;
     [SerializeField] private GameObject exitBtn;
     [SerializeField] private TextMeshProUGUI rewardItemDes;
-    [SerializeField] private Sprite rewardImage;
+    [SerializeField] private Image rewardImage;
 
     private List<Item> items; // 아이템 리스트
-    private Inventory inventory;
+    public Inventory inventory;
     private Item currentRewardItem; // 현재 보상 아이템 
     private int randomIndex;
 
-
     private void Awake()
-    { 
+    {
+ 
     }
 
     public void init()
@@ -40,22 +40,20 @@ public class Reward : MonoBehaviour
             Destroy(gameObject); // 중복 인스턴스 파괴
             return;
         }
+
+        InitializeItems();
     }
+
 
     public void ActivePanel()
     {
-            rewardPanel.SetActive(true);
-        
-    }
-
-    public void rewardPanelActive()
-    {
         currentRewardItem = GetRandomItem();
         // 보상 팝업에 아이템 정보 표시
-        rewardImage = currentRewardItem.image;
+        rewardImage.sprite = currentRewardItem.image;
+        rewardImage.color = new Color(1, 1, 1, 1);
         rewardItemDes.text = currentRewardItem.description;
 
-       
+        rewardPanel.SetActive(true);
     }
 
 
@@ -70,6 +68,25 @@ public class Reward : MonoBehaviour
 
         randomIndex = Random.Range(0, items.Count);
         return items[randomIndex];
+    }
+
+
+    void InitializeItems()
+    {
+        items = new List<Item>();
+        // 아이템 생성 및 리스트에 추가
+        Item item1 = new Item(Resources.Load<Sprite>("food_01"), "아이템1 설명");
+        Item item2 = new Item(Resources.Load<Sprite>("food_02"), "아이템2 설명");
+        Item item3 = new Item(Resources.Load<Sprite>("food_03"), "아이템3 설명");
+        Item item4 = new Item(Resources.Load<Sprite>("food_04"), "아이템4 설명");
+        Item item5 = new Item(Resources.Load<Sprite>("food_05"), "아이템5 설명");
+
+        // 리스트에 아이템 추가
+        items.Add(item1);
+        items.Add(item2);
+        items.Add(item3);
+        items.Add(item4);
+        items.Add(item5);
     }
 
 

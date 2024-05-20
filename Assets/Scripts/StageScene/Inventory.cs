@@ -5,21 +5,17 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory instance;
     public List<Sprite> itemSprites; // 아이템 이미지 리스트
     public GameObject inventoryPanel; // 인벤토리 패널
     public GameObject slotPrefab; // 슬롯 프리팹
 
     private List<GameObject> slots = new List<GameObject>();
 
+
     void Start()
     {
         InitializeInventory(20); // 20칸짜리 인벤토리 초기화
-        AddItem(0);
-        AddItem(1);
-        AddItem(2);
-        AddItem(3);
-        AddItem(4);
-        AddItem(0);
     }
 
     void InitializeInventory(int slotCount)
