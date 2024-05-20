@@ -20,17 +20,16 @@ public class Reward : MonoBehaviour
     private List<Item> items; // 아이템 리스트
     private Inventory inventory;
     private Item currentRewardItem; // 현재 보상 아이템 
-    int randomIndex;
+    private int randomIndex;
 
 
     private void Awake()
-    {
-        rewardPanel.SetActive(false);
+    { 
         if (instance == null)
             instance = this;
     }
 
-    private void Start()
+    public void Start()
     {
         // 게임 시작 시 아이템을 초기화하고 리스트에 추가
         InitializeItems();
