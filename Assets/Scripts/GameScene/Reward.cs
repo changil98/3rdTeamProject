@@ -25,33 +25,27 @@ public class Reward : MonoBehaviour
 
     private void Awake()
     { 
+    }
+
+    public void init()
+    {
+
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
+        }
+        else
+        {
+            Destroy(gameObject); // 중복 인스턴스 파괴
+            return;
+        }
     }
 
-    public void Start()
+    public void ActivePanel()
     {
-        // 게임 시작 시 아이템을 초기화하고 리스트에 추가
-        InitializeItems();
-    }
-
-
-    void InitializeItems()
-    {
-        items = new List<Item>();
-        // 아이템 생성 및 리스트에 추가
-        Item item1 = new Item(Resources.Load<Sprite>("food_01"), "아이템1 설명");
-        Item item2 = new Item(Resources.Load<Sprite>("food_02"), "아이템2 설명");
-        Item item3 = new Item(Resources.Load<Sprite>("food_03"), "아이템3 설명");
-        Item item4 = new Item(Resources.Load<Sprite>("food_04"), "아이템4 설명");
-        Item item5 = new Item(Resources.Load<Sprite>("food_05"), "아이템5 설명");
-
-        // 리스트에 아이템 추가
-        items.Add(item1);
-        items.Add(item2);
-        items.Add(item3);
-        items.Add(item4);
-        items.Add(item5);
+            rewardPanel.SetActive(true);
+        
     }
 
     public void rewardPanelActive()
@@ -61,7 +55,7 @@ public class Reward : MonoBehaviour
         rewardImage = currentRewardItem.image;
         rewardItemDes.text = currentRewardItem.description;
 
-        rewardPanel.SetActive(true);
+       
     }
 
 
