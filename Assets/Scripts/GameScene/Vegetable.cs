@@ -16,11 +16,13 @@ public class Vegetable : MonoBehaviour
         {
             Time.timeScale = 0f;
             DataManager.instance.characterNum = 1;
+            DataManager.instance.panel = 1;
         } 
         if (collision.gameObject.CompareTag("Gordo"))
         {
             Time.timeScale = 0f;
             DataManager.instance.characterNum = 0;
+            DataManager.instance.panel = 1;
         }
     }
 
