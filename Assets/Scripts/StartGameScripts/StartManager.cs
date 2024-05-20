@@ -12,6 +12,7 @@ public class StartManager : MonoBehaviour
 {
     public GameObject startUI;
     public GameObject characterSelect;
+
     public void GameStartBtn()
     {
         startUI.SetActive(false);
