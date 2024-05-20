@@ -84,11 +84,13 @@ public class GameManager : MonoBehaviour
         ResetGame();
         if (DataManager.instance.characterNum == 0)
         {
+            Debug.Log("확인1");
             gordo.SetActive(true);
             chibi.SetActive(false);
         }
         else if (DataManager.instance.characterNum == 1)
         {
+            Debug.Log("확인2");
             gordo.SetActive(false);
             chibi.SetActive(true);
         }
@@ -97,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
+        
         if (timerIsRunning)
         {
             if (timeRemaining > 0 )
