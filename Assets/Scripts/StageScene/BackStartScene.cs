@@ -7,6 +7,7 @@ public class BackStartScene : MonoBehaviour
 {
     public void BackScene()
     {
+        DataManager.instance.musicNum = 1;
         SceneManager.LoadScene("StartGameScene");
     }
 }
