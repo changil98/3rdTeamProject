@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterNum: 0
+  panel: 0
 --- !u!1 &224620730
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +821,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startUI: {fileID: 1943529048}
   characterSelect: {fileID: 34031178}
-  characterNum: 0
 --- !u!1001 &8551246391402414812
 PrefabInstance:
   m_ObjectHideFlags: 0

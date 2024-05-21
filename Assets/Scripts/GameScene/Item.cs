@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,4 +13,5 @@ public class Item
         image = sprite;
         description = des;
     }
+
 }
