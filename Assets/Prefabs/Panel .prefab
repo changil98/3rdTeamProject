@@ -122,3 +122,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7710f408302771547bb99d1555073e7d, type: 3}
   inventoryPanel: {fileID: 513464369866517595}
   slotPrefab: {fileID: 413048065702818859, guid: e054fb9cf44a7294099a15bfa724b04d, type: 3}
+  slotPanel: {fileID: 9150386732379071600}
+  numberOfSlots: 10

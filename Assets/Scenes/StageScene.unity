@@ -5269,6 +5269,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
+      propertyPath: slotPanel
+      value: 
+      objectReference: {fileID: 1512315007}
+    - target: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
+      propertyPath: itemSprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9150386732379071600, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
