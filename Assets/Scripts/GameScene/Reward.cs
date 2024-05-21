@@ -98,6 +98,8 @@ public class Reward : MonoBehaviour
         // 보상 팝업 창 비활성화
         rewardPanel.SetActive(false);
 
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene("StageScene");
     }
 
