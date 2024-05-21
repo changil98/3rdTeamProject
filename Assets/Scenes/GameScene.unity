@@ -407,6 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237791118}
   - component: {fileID: 237791117}
+  - component: {fileID: 237791119}
   m_Layer: 0
   m_Name: 'food_02 '
   m_TagString: Untagged
@@ -481,6 +482,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &237791119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237791116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90f42215def5d646b3e63b9a29d74b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: {fileID: 1618051642}
+  itemSpriteRenderer: {fileID: 237791117}
+  items:
+  - image: {fileID: 21300000, guid: 8d06d22a422222c46a83b7133633552f, type: 3}
+    description: 
 --- !u!1001 &242451233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -867,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395541931}
   - component: {fileID: 395541930}
+  - component: {fileID: 395541932}
   m_Layer: 0
   m_Name: 'food_03 '
   m_TagString: Untagged
@@ -941,6 +960,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &395541932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395541929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90f42215def5d646b3e63b9a29d74b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: {fileID: 1618051642}
+  itemSpriteRenderer: {fileID: 395541930}
+  items:
+  - image: {fileID: 21300000, guid: 44723655892e1a8438401d86f99a33e1, type: 3}
+    description: 
 --- !u!1 &425139602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 471127991}
   - component: {fileID: 471127990}
+  - component: {fileID: 471127992}
   m_Layer: 0
   m_Name: 'food_01 '
   m_TagString: Untagged
@@ -1235,6 +1272,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471127992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471127989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90f42215def5d646b3e63b9a29d74b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: {fileID: 1618051642}
+  itemSpriteRenderer: {fileID: 471127990}
+  items:
+  - image: {fileID: 21300000, guid: 9a63a628fb5c0264bb511b8315feda70, type: 3}
+    description: 
 --- !u!1 &488141370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,11 +2622,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a145a5271aec4c4a9edef8b8815c611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
+  randomItem: {fileID: 0}
   rewardPanel: {fileID: 1618051638}
   exitBtn: {fileID: 758892563}
   rewardItemDes: {fileID: 612366077}
   rewardImage: {fileID: 1938437143}
-  inventory: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
+  currentRewardItem:
+    image: {fileID: 0}
+    description: 
+  randomIndex: 0
 --- !u!1 &770348939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,8 +3034,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840740698}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 270.75803, y: 641.9239, z: -1.5694077}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 270.75803, y: 641.9239, z: -1.5694078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3197,6 +3256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965752119}
   - component: {fileID: 965752118}
+  - component: {fileID: 965752120}
   m_Layer: 0
   m_Name: 'food_05 '
   m_TagString: Untagged
@@ -3271,6 +3331,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965752120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965752117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90f42215def5d646b3e63b9a29d74b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: {fileID: 1618051642}
+  itemSpriteRenderer: {fileID: 965752118}
+  items:
+  - image: {fileID: 21300000, guid: 7710f408302771547bb99d1555073e7d, type: 3}
+    description: 
 --- !u!1 &979217517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,6 +3492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1047116656}
   - component: {fileID: 1047116655}
+  - component: {fileID: 1047116657}
   m_Layer: 0
   m_Name: 'food_04 '
   m_TagString: Untagged
@@ -3489,6 +3567,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1047116657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047116654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90f42215def5d646b3e63b9a29d74b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: {fileID: 1618051642}
+  itemSpriteRenderer: {fileID: 1047116655}
+  items:
+  - image: {fileID: 21300000, guid: 539ef593e6d67a6419ee1d1af1962920, type: 3}
+    description: 
 --- !u!1 &1097336981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3935,7 +4030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1300753571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4498,11 +4593,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a145a5271aec4c4a9edef8b8815c611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
+  randomItem: {fileID: 840740699}
   rewardPanel: {fileID: 1618051638}
   exitBtn: {fileID: 758892563}
   rewardItemDes: {fileID: 612366077}
   rewardImage: {fileID: 1938437143}
-  inventory: {fileID: 5128502215787709163, guid: ac0aa57f0b1ddcf448e7c772e7c08b81, type: 3}
+  currentRewardItem:
+    image: {fileID: 0}
+    description: 
+  randomIndex: 0
 --- !u!1 &1670956679
 GameObject:
   m_ObjectHideFlags: 0

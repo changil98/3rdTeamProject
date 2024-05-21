@@ -11,16 +11,16 @@ using static UnityEditor.Progress;
 public class Reward : MonoBehaviour
 {
     public static Reward instance;
-
+    public Inventory inventory;
+    public RandomItem randomItem;   
     [SerializeField] private GameObject rewardPanel;
     [SerializeField] private GameObject exitBtn;
     [SerializeField] private TextMeshProUGUI rewardItemDes;
     [SerializeField] private Image rewardImage;
 
     private List<Item> items; // 아이템 리스트
-    public Inventory inventory;
-    private Item currentRewardItem; // 현재 보상 아이템 
-    private int randomIndex;
+    public Item currentRewardItem; // 현재 보상 아이템 
+    public int randomIndex;
 
     private void Awake()
     {
@@ -61,8 +61,8 @@ public class Reward : MonoBehaviour
         rewardImage.sprite = currentRewardItem.image;
         rewardImage.color = new Color(1, 1, 1, 1);
         rewardItemDes.text = currentRewardItem.description;
-
         rewardPanel.SetActive(true);
+        RandomItem.instance.GetItem();
     }
 
 
