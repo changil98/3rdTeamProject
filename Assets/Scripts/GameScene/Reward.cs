@@ -11,7 +11,7 @@ using static UnityEditor.Progress;
 public class Reward : MonoBehaviour
 {
     //public static Reward instance;
-   // public Inventory inventory;
+    public Inventory inventory;
        
     [SerializeField] private GameObject rewardPanel;
     [SerializeField] private GameObject exitBtn;
@@ -51,7 +51,7 @@ public class Reward : MonoBehaviour
     public Item GetRandomItem()
     {
 
-        //inventory.init();
+        inventory.init();
         InitializeItems();
         //inventory = Inventory.instance;
         if (items == null || items.Count == 0)

@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
     public List<Sprite> itemSprites; // 아이템 이미지 리스트
 
 
-    public void Awake()
+    public void init()
     {
         if (instance == null)
         {

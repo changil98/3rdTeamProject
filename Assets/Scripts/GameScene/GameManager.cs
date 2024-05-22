@@ -107,16 +107,16 @@ public class GameManager : MonoBehaviour
         switch (stage)
         {
             case 0:
-                timeRemaining = 3;
+                timeRemaining = 30;
                 break;
             case 1:
-                timeRemaining = 3;
+                timeRemaining = 45;
                 break;
             case 2:
-                timeRemaining = 3;
+                timeRemaining = 45;
                 break;
             case 3:
-                timeRemaining = 3;
+                timeRemaining = 60;
                 break;
         }
 
