@@ -10,7 +10,7 @@ using static UnityEditor.Progress;
 
 public class GameManager : MonoBehaviour
 {
-    //public static GameManager Instance;
+    public static GameManager Instance;
 
     public GameObject settingPanel;
     public GameObject endPanel;
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite ChurnOutImage;
     [SerializeField] private Sprite AggreGateImage;
     [SerializeField] private TextMeshProUGUI timeText;
+    public SpriteRenderer[] itemImages; // 게임 씬 UI에 있는 아이템 이미지 배열
 
     public Reward reward;
 
@@ -48,11 +49,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //GameManager.Instance = this;
+        GameManager.Instance = this;
         Time.timeScale = 1.0f;
         reward.init();
     }
    
+    
 
     public void ResetGame()
     {
@@ -117,6 +119,8 @@ public class GameManager : MonoBehaviour
                 timeRemaining = 3;
                 break;
         }
+
+        RandomItem.instance.InitializeItemStates(); 
     }
 
 
