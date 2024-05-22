@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 {
     AudioSource audioSource;
     public AudioClip[] gameMusic;
-    private int previousSceneIndex = -1;
+    private int previousSceneIndex = 0;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class SoundManager : MonoBehaviour
             return;
         if (gameMusic[0] && scene.buildIndex == 0)
             return;
-        if (gameMusic[1] && scene.buildIndex == 1 && previousSceneIndex == -1)
+        if (gameMusic[1] && scene.buildIndex == 1 && previousSceneIndex == 0)
             return;
             audioSource.clip = gameMusic[sceneIndex];
             audioSource.Play();
