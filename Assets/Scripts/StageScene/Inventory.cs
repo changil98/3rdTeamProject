@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
     public List<Sprite> itemSprites; // 아이템 이미지 리스트
 
 
-    public void init()
+    public void Awake()
     {
         if (instance == null)
         {
@@ -31,22 +31,6 @@ public class Inventory : MonoBehaviour
     {
         InitializeInventory(20); // 20칸짜리 인벤토리 초기화
         AddItem(0);
-    }
-
-
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Canvas canvas = FindObjectOfType<Canvas>();
-        if (canvas != null && inventoryContainer != null)
-        {
-            inventoryContainer = Instantiate(inventoryContainerPrefab, canvas.transform, false);
-            inventoryContainer.transform.SetParent(canvas.transform, false);
-            inventoryContainer.SetActive(true);
-        }
-
-        inventoryContainer = Instantiate(inventoryContainerPrefab, canvas.transform, false);
-        inventoryPanel = inventoryContainer.transform.Find("Panel").gameObject;
     }
 
     void InitializeInventory(int slotCount)
