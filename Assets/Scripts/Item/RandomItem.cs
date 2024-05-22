@@ -31,7 +31,7 @@ public class RandomItem : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(itemStates.Length);
+   
     }
 
     public void InitializeItemStates(Reward _reward)
@@ -75,6 +75,12 @@ public class RandomItem : MonoBehaviour
                 // 해당 아이템의 이미지를 흰색으로 변경
                 GameManager.Instance.itemImages[i].sprite = items[i].image;
                 GameManager.Instance.itemImages[i].color = Color.white;
+            }
+            else if (itemStates[i] == false)
+            {
+                // 해당 아이템의 이미지를 검정으로 변경
+                GameManager.Instance.itemImages[i].sprite = items[i].image;
+                GameManager.Instance.itemImages[i].color = Color.black;
             }
           
         }

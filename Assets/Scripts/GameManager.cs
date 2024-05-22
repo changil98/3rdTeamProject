@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     static int level = 5;
 
-    [SerializeField] private GameObject apple;
+    public GameObject apple;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite normalImage;
     [SerializeField] private Sprite speedUpImage;
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public SpriteRenderer[] itemImages; // 게임 씬 UI에 있는 아이템 이미지 배열
 
     public Reward reward;
+    public UseItems useItems;
 
     public static int Stage
     {
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    private void MakeVegetable()
+    public void MakeVegetable()
     {
         Instantiate(apple);
     }
@@ -107,16 +108,16 @@ public class GameManager : MonoBehaviour
         switch (stage)
         {
             case 0:
-                timeRemaining = 3;
+                timeRemaining = 30;
                 break;
             case 1:
-                timeRemaining = 3;
+                timeRemaining = 45;
                 break;
             case 2:
-                timeRemaining = 3;
+                timeRemaining = 45;
                 break;
             case 3:
-                timeRemaining = 3;
+                timeRemaining = 60;
                 break;
         }
 
@@ -176,6 +177,39 @@ public class GameManager : MonoBehaviour
         {
             endPanel.SetActive(true);
             DataManager.instance.panel = 0;
+        }
+
+        // 아이템 사용 근데 이제 보상 아이템이 true 일때만 사용 가능 
+        if (RandomItem.instance.itemStates[0] && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            UseItems.instance.StopVegetables();
+            RandomItem.instance.itemStates[0] = false;
+            Debug.Log("아이템 사용");
+        }
+        else if (RandomItem.instance.itemStates[3] && Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            UseItems.instance.StopVegetables();
+            RandomItem.instance.itemStates[3] = false;
+            Debug.Log("아이템 사용");
+        }
+        else if (RandomItem.instance.itemStates[2] && Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            UseItems.instance.RemoveVegetables();
+            RandomItem.instance.itemStates[2] = false;
+            Debug.Log("아이템 사용");
+        }
+        else if (RandomItem.instance.itemStates[1] && Input.GetKeyDown(KeyCode.Alpha2))
+        {
+
+            UseItems.instance.SuperPower();
+            RandomItem.instance.itemStates[1] = false;
+            Debug.Log("아이템 사용");
+        }
+        else if (RandomItem.instance.itemStates[4]  && Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            UseItems.instance.SuperPower();
+            RandomItem.instance.itemStates[4] = false;
+            Debug.Log("아이템 사용");
         }
     }
 }
