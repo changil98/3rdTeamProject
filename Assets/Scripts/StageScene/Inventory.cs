@@ -24,10 +24,8 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
-            return;
+            if (instance != this) Destroy(gameObject);
         }
- 
     }
     void Start()
     {

@@ -49,7 +49,6 @@ public class RandomItem : MonoBehaviour
 
     public void GetItem()
    {
-        Debug.LogError(gameObject.name);
         Debug.Log(itemStates.Length + " " + items.Count);
         for (int i = 0; i < items.Count; i++)
          {  
