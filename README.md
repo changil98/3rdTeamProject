@@ -20,14 +20,12 @@
 
 ## 📌 주요 기능
 
+```
 **시작**
 
 
-
-
-
 ![enter image description here](https://media.discordapp.net/attachments/916248167941566534/1242741912251662406/image.png?ex=664ef118&is=664d9f98&hm=611ca85e7ebcd1aca261029a5fe46962060a2b53844727a210d41efdb82b2226&=&format=webp&quality=lossless)
-
+```
 
 **캐릭터 선택**
 
