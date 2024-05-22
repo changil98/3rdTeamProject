@@ -24,7 +24,13 @@ public class Reward : MonoBehaviour
 
     private void Awake()
     {
+
         inventory.init();
+    }
+
+    private void Start()
+    {
+        inventory = Inventory.instance;
     }
 
 
@@ -36,7 +42,11 @@ public class Reward : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
         }
-
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         InitializeItems();
     }
@@ -62,7 +72,8 @@ public class Reward : MonoBehaviour
         rewardImage.color = new Color(1, 1, 1, 1);
         rewardItemDes.text = currentRewardItem.description;
         rewardPanel.SetActive(true);
-        RandomItem.instance.GetItem();
+        randomItem.GetItem();
+
     }
 
 
@@ -88,16 +99,13 @@ public class Reward : MonoBehaviour
     // 인벤토리에 넣기 
     public void ApplyReward()
     {
-
         // 보상 아이템을 인벤토리에 추가
-        Inventory._instance.itemSprites.Add(rewardImage.sprite);
+        Inventory.instance.itemSprites.Add(rewardImage.sprite);
         Debug.Log(rewardImage.sprite);
 
-        Inventory._instance.AddItem(Inventory._instance.itemSprites.Count-1);
-
+        Inventory.instance.AddItem(Inventory.instance.itemSprites.Count-1);
         // 보상 팝업 창 비활성화
         rewardPanel.SetActive(false);
-
         Time.timeScale = 1f;
 
         SceneManager.LoadScene("StageScene");
