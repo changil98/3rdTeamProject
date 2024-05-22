@@ -10,9 +10,9 @@ using static UnityEditor.Progress;
 
 public class Reward : MonoBehaviour
 {
-    public static Reward instance;
+    //public static Reward instance;
     public Inventory inventory;
-    public RandomItem randomItem;   
+       
     [SerializeField] private GameObject rewardPanel;
     [SerializeField] private GameObject exitBtn;
     [SerializeField] private TextMeshProUGUI rewardItemDes;
@@ -22,38 +22,38 @@ public class Reward : MonoBehaviour
     public Item currentRewardItem; // 현재 보상 아이템 
     public int randomIndex;
 
-    private void Awake()
+    public void Awake()
     {
 
-        inventory.init();
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //    DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
+        //}
+        //else
+        //{
+        //    if(instance != this)
+        //    Destroy(gameObject);
+        //}
+
+        //inventory.init();
+        //InitializeItems();
+        //gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        inventory = Inventory.instance;
+        //inventory = Inventory.instance;
     }
 
-
-    public void init()
-    {
-
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        InitializeItems();
-    }
 
     // 아이템 랜덤으로 띄우기 
     public Item GetRandomItem()
     {
+
+        inventory.init();
+        InitializeItems();
+        inventory = Inventory.instance;
         if (items == null || items.Count == 0)
         {
             Debug.LogWarning("아이템 리스트가 비어있습니다.");
@@ -72,7 +72,7 @@ public class Reward : MonoBehaviour
         rewardImage.color = new Color(1, 1, 1, 1);
         rewardItemDes.text = currentRewardItem.description;
         rewardPanel.SetActive(true);
-        randomItem.GetItem();
+        RandomItem.instance.GetItem();
 
     }
 

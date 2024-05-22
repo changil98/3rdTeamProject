@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         GameManager.Instance = this;
         Time.timeScale = 1.0f;
-        reward.init();
+       
     }
    
     
@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        RandomItem.instance.InitializeItemStates(); 
+        RandomItem.instance.InitializeItemStates(reward); 
     }
 
 
@@ -161,9 +161,9 @@ public class GameManager : MonoBehaviour
                 timerIsRunning = false;
                 timeText.text = timeRemaining.ToString("N2");
                 // 일단 0초가 되면 클리어니까 보상 판넬 뜨게 
-                if (Reward.instance != null)
+                if (reward != null)
                 {
-                    Reward.instance.ActivePanel(); // 보상 패널 활성화
+                    reward.ActivePanel(); // 보상 패널 활성화
                 }
                 else
                 {

@@ -21,30 +21,41 @@ public class RandomItem : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else 
         {
+            if(instance != this)
             Destroy(gameObject);
-            return;
         }
   
     }
 
-
-    public void InitializeItemStates()
+    private void Update()
     {
-       itemStates = new bool[GameManager.Instance.itemImages.Length];
-        LoadItemStates();
+        Debug.Log(itemStates.Length);
+    }
+
+    public void InitializeItemStates(Reward _reward)
+    {
+        reward = _reward;
+        if(itemStates.Length ==0)
+        {
+            itemStates = new bool[GameManager.Instance.itemImages.Length];
+            LoadItemStates();
+        }
+        
         UpdateItemUI();
     }
 
 
     public void GetItem()
    {
+        Debug.LogError(gameObject.name);
+        Debug.Log(itemStates.Length + " " + items.Count);
         for (int i = 0; i < items.Count; i++)
-         {
+         {  
             if (items[i].image.name == reward.currentRewardItem.image.name)
             {
-                    Debug.Log("아이템 적용");
+                    Debug.Log("아이템 적용" + i); 
 
                       itemStates[i] = true;
                 // 해당 아이템의 이미지를 흰색으로 변경
@@ -94,12 +105,6 @@ public class RandomItem : MonoBehaviour
                 itemStates[i] = PlayerPrefs.GetInt("ItemState" + i, 0) == 1;
             }
         }
-    }
-
-    public void OnDestroy()
-    {
-        // 씬이 바뀔 때 상태 저장
-        SaveItemStates();
     }
 }
 
