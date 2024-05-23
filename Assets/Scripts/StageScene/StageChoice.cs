@@ -7,9 +7,7 @@ public class StageChoice : MonoBehaviour
 {
     
     public void NormalStage()
-    {
-       
-       
+    {       
         SceneManager.LoadScene("GameScene");
         GameManager.Stage = 0;
     }

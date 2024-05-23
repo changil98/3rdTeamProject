@@ -43,7 +43,7 @@ public class Reward : MonoBehaviour
 
     private void Start()
     {
-        //inventory = Inventory.instance;
+       inventory = Inventory.instance;
     }
 
 
@@ -100,10 +100,10 @@ public class Reward : MonoBehaviour
     public void ApplyReward()
     {
         // 보상 아이템을 인벤토리에 추가
-        Inventory.instance.itemSprites.Add(rewardImage.sprite);
+        inventory.itemSprites.Add(rewardImage.sprite);
         Debug.Log(rewardImage.sprite);
 
-        Inventory.instance.AddItem(Inventory.instance.itemSprites.Count-1);
+        inventory.AddItem(inventory.itemSprites.Count-1);
         // 보상 팝업 창 비활성화
         rewardPanel.SetActive(false);
         Time.timeScale = 1f;
