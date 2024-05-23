@@ -10,5 +10,5 @@
 - **RandomItem** : Item의 획득 여부 상태에 따라 색상이 변하고 Item을 저장,불러오는 역할을 합니다.
 -  **Reword** : 스테이지 클리어시 랜덤으로 Item을 획득하고 Item의 기능을 설명해주는 역할을 합니다.
 -  **SettingBtn** : UI 기능을 담당합니다.
--  **Slot** : 
+-  **Slot** : 사용하지 않는 스크립트입니다.
 -  **Vegetable** :  Vegetable 오브젝트를 랜덤한 범위에서 생성 , Vegetable 오브젝트와 Player 오브젝트가 충돌했을 때의 기능을 담당합니다.
