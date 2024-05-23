@@ -95,19 +95,19 @@
 
 ![enter image description here](https://cdn.discordapp.com/attachments/916248167941566534/1243010051057389649/image_360.png?ex=664fead2&is=664e9952&hm=dce2bd2a55f5cbc97e9a9925c34fa5160343e7e031433df33225ac7ce35df660&)
 
-[Animator](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Animator/Animator.md "깃헙")
+[Animator](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Animator/Animator.md "Animator")
 
-[Prefabs](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Prefabs/Prefabs.md "깃헙")
+[Prefabs](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Prefabs/Prefabs.md "Prefabs")
 
-[Resources](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Resources/Resources.md "깃헙")
+[Resources](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Resources/Resources.md "Resources")
 
-[Scenes](https://github.com/changil98/3rdTeamProject/tree/main/Project%20Structure/Scenes/Scenes.md "깃헙")
+[Scenes](https://github.com/changil98/3rdTeamProject/tree/main/Project%20Structure/Scenes/Scenes.md "Scenes")
 
-[Scripts](https://github.com/changil98/3rdTeamProject/tree/main/Project%20Structure/Scripts "깃헙")
+[Scripts](https://github.com/changil98/3rdTeamProject/tree/main/Project%20Structure/Scripts "Scripts")
 
-[Sound](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Sound/Sound.md "깃헙")
+[Sound](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Sound/Sound.md "Sound")
 
-[UI](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/UI/ui.md "깃헙")
+[UI](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/UI/ui.md "UI")
 
 
 
