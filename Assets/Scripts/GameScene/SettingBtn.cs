@@ -27,6 +27,7 @@ public class SettingBtn : MonoBehaviour
 
     public void Exit()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("StageScene");
     }
 }

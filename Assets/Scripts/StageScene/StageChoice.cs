@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class StageChoice : MonoBehaviour
 {
+    
     public void NormalStage()
-    {
+    {       
         SceneManager.LoadScene("GameScene");
         GameManager.Stage = 0;
     }
@@ -24,7 +25,7 @@ public class StageChoice : MonoBehaviour
     }
 
     public void AggreGateStage()
-    {
+    { 
         SceneManager.LoadScene("GameScene");
         GameManager.Stage = 3;
     }

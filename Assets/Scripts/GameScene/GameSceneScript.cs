@@ -46,6 +46,7 @@ public class GameSceneScript : MonoBehaviour
 
     public void BackToStageBtn()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 }
