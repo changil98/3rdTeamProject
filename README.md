@@ -92,4 +92,25 @@
  
 
 ![enter image description here](https://media.discordapp.net/attachments/916248167941566534/1242748323727806506/image.png?ex=664ef711&is=664da591&hm=e85486053d8800d7f489f67a5cb0a122036cfd04e496eb63bcc5416a77b4b95b&=&format=webp&quality=lossless&width=926&height=674)
+
+![enter image description here](https://cdn.discordapp.com/attachments/916248167941566534/1243010051057389649/image_360.png?ex=664fead2&is=664e9952&hm=dce2bd2a55f5cbc97e9a9925c34fa5160343e7e031433df33225ac7ce35df660&)
+
+[Animator](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Animator/Animator.md "깃헙")
+
+[Prefabs](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Prefabs/Prefabs.md "깃헙")
+
+[Resources](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Resources/Resources.md "깃헙")
+
+[Scenes](https://github.com/changil98/3rdTeamProject/tree/main/Project%20Structure/Scenes/Scenes.md "깃헙")
+
+[Scripts](https://github.com/changil98/3rdTeamProject/tree/main/Project%20Structure/Scripts "깃헙")
+
+[Sound](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/Sound/Sound.md "깃헙")
+
+[UI](https://github.com/changil98/3rdTeamProject/blob/main/Project%20Structure/UI/ui.md "깃헙")
+
+
+
+
+
  
